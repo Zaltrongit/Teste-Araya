@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordenar e Reverter Array</title>
+</head>
+<body>
+  <h1>Lista de Nomes</h1>
+  <ul id="lista-nomes"></ul>
+
+  <button onclick="ordenarNomes()">Ordenar A-Z</button>
+  <button onclick="reverterNomes()">Reverter Ordem</button>
+
+  <script>
+    let nomes = ["Gabriel", "Bernardo", "Leandra", "Derli", "Pedro"];
+
+    function exibirNomes() {
+  const lista = document.getElementById("lista-nomes");
+  lista.innerHTML = "";
+  
+  for (let i = 0; i < nomes.length; i++) {
+    const item = document.createElement("li");
+    item.textContent = nomes[i];
+    lista.appendChild(item);
+  }
+}
+
+    function ordenarNomes() {
+      nomes.sort();
+      exibirNomes();
+    }
+
+    function reverterNomes() {
+      nomes.reverse();
+      exibirNomes();
+    }
+
+    // Exibe os nomes na carga inicial da página
+    exibirNomes();
+  </script>
+</body>
+</html>
